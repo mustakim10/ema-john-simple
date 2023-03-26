@@ -11,6 +11,10 @@ fetch('products.json')
 .then(data=>setProducts(data))
 },[]);
 
+const handleAddToCart = (product) =>{
+    console.log(product);
+}
+
     return (
         <div className='shop-container'>
            <div className="products-container">
@@ -18,6 +22,7 @@ fetch('products.json')
                 products.map(product=> <Product
                 key={product.id}
                 product = {product}
+                handleAddToCart={handleAddToCart}
                 ></Product>)
             }
 
